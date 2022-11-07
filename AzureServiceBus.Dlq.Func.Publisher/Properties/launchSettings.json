@@ -1,0 +1,9 @@
+{
+  "profiles": {
+    "AzureServiceBus_Dlq_Func_Publisher": {
+      "commandName": "Project",
+      "commandLineArgs": "--port 7125",
+      "launchBrowser": false
+    }
+  }
+}

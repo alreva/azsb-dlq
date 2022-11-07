@@ -1,0 +1,9 @@
+{
+  "profiles": {
+    "AzureServiceBus_Dlq_Func_Consumer": {
+      "commandName": "Project",
+      "commandLineArgs": "--port 7222",
+      "launchBrowser": false
+    }
+  }
+}
