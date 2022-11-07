@@ -10,9 +10,9 @@ public class Consumer
     [FunctionName("Consumer")]
     public async Task Run(
         [ServiceBusTrigger("customers")]
-        string myQueueItem,
+        string message,
         ILogger log)
     {
-        log.LogInformation($"C# ServiceBus queue trigger function processed message: {myQueueItem}");
+        log.LogInformation($"C# ServiceBus queue trigger function processed message: {message}");
     }
 }
