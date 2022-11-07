@@ -7,7 +7,7 @@ public class Consumer
 {
     [FunctionName("Consumer")]
     public void Run(
-        [ServiceBusTrigger("customers", Connection = "")]
+        [ServiceBusTrigger("customers", Connection = "ServiceBusConnection")]
         string myQueueItem,
         ILogger log)
     {
