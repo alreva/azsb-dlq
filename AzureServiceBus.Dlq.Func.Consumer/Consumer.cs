@@ -1,3 +1,4 @@
+using System.Threading.Tasks;
 using Microsoft.Azure.WebJobs;
 using Microsoft.Extensions.Logging;
 
@@ -5,9 +6,10 @@ namespace AzureServiceBus.Dlq.Func.Consumer;
 
 public class Consumer
 {
+    [ServiceBusAccount("ServiceBusConnection")]
     [FunctionName("Consumer")]
-    public void Run(
-        [ServiceBusTrigger("customers", Connection = "ServiceBusConnection")]
+    public async Task Run(
+        [ServiceBusTrigger("customers")]
         string myQueueItem,
         ILogger log)
     {
