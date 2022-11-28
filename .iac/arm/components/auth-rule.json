@@ -1,0 +1,39 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "location": {
+      "defaultValue": "West Europe",
+      "type": "String"
+    },
+    "api-version": {
+      "defaultValue": "2022-01-01-preview",
+      "type": "String"
+    },
+    "service-name": {
+      "defaultValue": "service-name",
+      "type": "String"
+    },
+    "permission-name": {
+      "defaultValue": "permission-name",
+      "type": "String"
+    },
+    "rights": {
+      "defaultValue": "permission",
+      "type": "String"
+    }
+  },
+  "resources": [
+    {
+      "type": "Microsoft.ServiceBus/namespaces/queues/authorizationrules",
+      "apiVersion": "[parameters('api-version')]",
+      "name": "[concat(parameters('service-name'), '/permissions/', parameters('permission-name'))]",
+      "location": "[parameters('location')]",
+      "properties": {
+        "rights": [
+          "[parameters('rights')]"
+        ]
+      }
+    }
+  ]
+}
